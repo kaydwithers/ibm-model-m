@@ -1,0 +1,77 @@
+.navigation {
+  display: flex;
+  flex-direction: column;
+  grid-column-start: 2;
+  justify-content: space-between;
+}
+
+.navigation__top {
+  display: grid;
+  grid-template-columns: repeat(3, var(--key-width));
+  grid-template-rows: repeat(2, var(--key-height));
+}
+
+.navigation__bottom {
+  display: grid;
+  grid-template-areas:
+    ". a ."
+    "b c d";
+  grid-template-columns: repeat(3, var(--key-width));
+  grid-template-rows: repeat(2, var(--key-height));
+}
+
+.insert:after {
+  content: "Insert";
+}
+
+.home:after {
+  content: "Home";
+}
+
+.page-up:after {
+  content: "Page Up";
+}
+
+.delete:after {
+  content: "Delete";
+}
+
+.end:after {
+  content: "End";
+}
+
+.page-down:after {
+  content: "Page Down";
+}
+
+.key__item.arrow-up:after {
+  content: "^";
+}
+
+.key__item.arrow-left:after {
+  content: "<";
+}
+
+.key__item.arrow-down:after {
+  content: "v";
+}
+
+.key__item.arrow-right:after {
+  content: ">";
+}
+
+.arrow-up {
+  grid-area: a;
+}
+
+.arrow-left {
+  grid-area: b;
+}
+
+.arrow-down {
+  grid-area: c;
+}
+
+.arrow-right {
+  grid-area: d;
+}

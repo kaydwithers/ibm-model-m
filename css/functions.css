@@ -1,0 +1,73 @@
+.functions {
+  display: grid;
+  column-gap: 1rem;
+  grid-template-columns: repeat(3, calc(var(--key-width) * 4)) calc(
+      var(--key-width) * 3
+    );
+  grid-template-rows: var(--key-height);
+}
+
+.functions__item {
+  display: grid;
+  grid-template-columns: repeat(4, var(--key-width));
+}
+
+.f1:after {
+  content: "F1";
+}
+
+.f2:after {
+  content: "F2";
+}
+
+.f3:after {
+  content: "F3";
+}
+
+.f4:after {
+  content: "F4";
+}
+
+.f5:after {
+  content: "F5";
+}
+
+.f6:after {
+  content: "F6";
+}
+
+.f7:after {
+  content: "F7";
+}
+
+.f8:after {
+  content: "F8";
+}
+
+.f9:after {
+  content: "F9";
+}
+
+.f10:after {
+  content: "F10";
+}
+
+.f11:after {
+  content: "F11";
+}
+
+.f12:after {
+  content: "F12";
+}
+
+.print:after {
+  content: "Print Screen";
+}
+
+.scroll:after {
+  content: "Scroll Lock";
+}
+
+.pause:after {
+  content: "Pause";
+}

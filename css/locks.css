@@ -1,0 +1,31 @@
+.locks {
+  display: grid;
+  background-color: var(--grey);
+  border: 0.3rem solid var(--grey-darkest);
+  border-radius: 0.3rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: var(--key-height);
+}
+
+.locks__item {
+  height: var(--key-height);
+  width: calc(var(--key-width) + calc(var(--key-width) / 3));
+}
+
+.locks__item:not(:last-child) {
+  border-right: 0.2rem solid var(--grey-darkest);
+}
+
+.locks__content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  padding: 0.3rem;
+}
+
+.locks__content .light {
+  background-color: var(--grey-darkest);
+  width: 0.5rem;
+  height: 0.3rem;
+}

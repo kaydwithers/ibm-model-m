@@ -1,0 +1,90 @@
+.numpad {
+  display: grid;
+  grid-template-columns: repeat(4, var(--key-width));
+  grid-template-rows: repeat(5, var(--key-height));
+}
+
+.numpad .num-lock:after {
+  content: "Num Lock";
+}
+
+.numpad .backslash:after {
+  content: "/";
+}
+
+.numpad .multiply:after {
+  content: "*";
+}
+
+.numpad .minus:after {
+  content: "-";
+}
+
+.numpad .seven:after {
+  content: "7";
+}
+
+.numpad .eight:after {
+  content: "8";
+}
+
+.numpad .nine:after {
+  content: "9";
+}
+
+.numpad .key__item.plus:after {
+  content: "+";
+}
+
+.numpad .four:after {
+  content: "4";
+}
+.numpad .five:after {
+  content: "5";
+}
+
+.numpad .six:after {
+  content: "6";
+}
+
+.numpad .one:after {
+  content: "1";
+}
+
+.numpad .two:after {
+  content: "2";
+}
+
+.numpad .three:after {
+  content: "3";
+}
+
+.numpad .key__item.enter:after {
+  content: "Enter";
+}
+
+.numpad .key__item.zero:after {
+  content: "0";
+}
+
+.numpad .dot:after {
+  content: ".";
+}
+
+.numpad .enter,
+.numpad .plus {
+  height: calc(var(--key-height) * 2);
+  grid-column-start: 4;
+}
+
+.numpad .plus {
+  grid-row: 2 / 4;
+}
+
+.numpad .enter {
+  grid-row: 4 / 6;
+}
+
+.numpad .zero {
+  grid-column: 1 / 3;
+}
