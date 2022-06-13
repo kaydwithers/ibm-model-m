@@ -26,10 +26,11 @@ html {
 
 body {
   font-family: inherit;
+  font-size: 0.8rem;
   line-height: inherit;
+  margin: 0;
   padding-bottom: 8rem;
   padding-top: 8rem;
-  margin: 0;
 }
 
 blockquote,
