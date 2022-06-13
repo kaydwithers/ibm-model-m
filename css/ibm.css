@@ -1,0 +1,215 @@
+.ibm-logo {
+  display: flex;
+  position: relative;
+  margin-bottom: 10rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+  z-index: 666;
+}
+
+.ibm-logo__content {
+  bottom: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+.ibm-logo__content__inner {
+  display: grid;
+  grid-template-columns: repeat(36, 1fr);
+  grid-template-rows: repeat(15, 1fr);
+  height: 100%;
+}
+
+.ibm-logo__content__inner div {
+  background-color: var(--ibm-blue);
+}
+
+.ibm-logo__image {
+  width: 100%;
+}
+
+.ibm-logo__image img {
+  opacity: 0.3;
+  width: 100%;
+}
+
+/* I */
+.ia {
+  grid-area: 1 / 1 / 2 / 8;
+}
+
+.ib {
+  grid-area: 3 / 1 / 4 / 8;
+}
+
+.ic {
+  grid-area: 5 / 3 / 6 / 6;
+}
+
+.id {
+  grid-area: 7 / 3 / 8 / 6;
+}
+
+.ie {
+  grid-area: 9 / 3 / 10 / 6;
+}
+
+.if {
+  grid-area: 11 / 3 / 12 / 6;
+}
+
+.ig {
+  grid-area: 13 / 1 / 14 / 8;
+}
+.ih {
+  grid-area: 15 / 1 / 16 / 8;
+}
+
+/* B */
+.ba {
+  grid-area: 1 / 9 / 2 / 19;
+  border-radius: 0% 30% 0% 0% / 0% 100% 0% 0%;
+}
+
+.bb {
+  grid-area: 3 / 9 / 4 / 20;
+}
+
+.bc-a {
+  grid-area: 5 / 11 / 6 / 14;
+}
+
+.bc-b {
+  grid-area: 5 / 17 / 6 / 20;
+}
+
+.bd {
+  grid-area: 7 / 11 / 8 / 20;
+}
+
+.be {
+  grid-area: 9 / 11 / 10 / 20;
+}
+
+.bf-a {
+  grid-area: 11 / 11 / 12 / 14;
+}
+.bf-b {
+  grid-area: 11 / 17 / 12 / 20;
+}
+
+.bg {
+  grid-area: 13 / 9 / 14 / 20;
+}
+.bh {
+  grid-area: 15 / 9 / 16 / 19;
+}
+
+/* M */
+.ma-a {
+  grid-area: 1 / 21 / 2 / 27;
+  clip-path: polygon(0% 0, 94% 0%, 100% 100%, 0% 100%);
+}
+
+.ma-b {
+  grid-area: 1 / 31 / 2 / 37;
+  clip-path: polygon(6% 0, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.mb-a {
+  grid-area: 3 / 21 / 4 / 28;
+  clip-path: polygon(0% 0%, 90% 0%, 96% 100%, 0% 100%);
+}
+
+.mb-b {
+  grid-area: 3 / 30 / 4 / 37;
+  clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 4% 100%);
+}
+
+.mc-a {
+  grid-area: 5 / 23 / 6 / 29;
+  clip-path: polygon(0% 0, 84% 0%, 90% 100%, 0% 100%);
+}
+
+.mc-b {
+  grid-area: 5 / 29 / 6 / 35;
+  clip-path: polygon(16% 0%, 100% 0%, 100% 100%, 10% 100%);
+}
+
+.md-a {
+  grid-area: 7 / 23 / 8 / 26;
+}
+
+.md-b {
+  grid-area: 7 / 26 / 8 / 29;
+  clip-path: polygon(0% 0, 90% 0%, 100% 100%, 10% 100%);
+}
+
+.md-c {
+  grid-area: 7 / 29 / 8 / 32;
+  clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+}
+
+.md-d {
+  grid-area: 7 / 32 / 8 / 35;
+}
+
+.me {
+  grid-area: 9 / 23 / 10 / 35;
+}
+
+.me-a {
+  grid-area: 9 / 23 / 10 / 26;
+}
+
+.me-b {
+  grid-area: 9 / 26 / 10 / 32;
+  clip-path: polygon(10% 0, 90% 0%, 84% 100%, 16% 100%);
+}
+
+.me-c {
+  grid-area: 9 / 32 / 10 / 35;
+}
+
+.mf-a {
+  grid-area: 11 / 23 / 12 / 26;
+}
+
+.mf-b {
+  grid-area: 11 / 27 / 12 / 31;
+  clip-path: polygon(7% 0%, 93% 0%, 85% 100%, 15% 100%);
+}
+
+.mf-c {
+  grid-area: 11 / 32 / 12 / 35;
+}
+
+.mg-a {
+  grid-area: 13 / 21 / 14 / 26;
+}
+
+.mg-b {
+  grid-area: 13 / 28 / 14 / 30;
+  clip-path: polygon(0% 0, 100% 0%, 85% 100%, 15% 100%);
+}
+
+.mg-c {
+  grid-area: 13 / 32 / 14 / 37;
+}
+
+.mh-a {
+  grid-area: 15 / 21 / 16 / 26;
+}
+
+.mh-b {
+  grid-area: 15 / 28 / 16 / 30;
+  clip-path: polygon(30% 0, 70% 0%, 50% 100%, 50% 100%);
+}
+
+.mh-c {
+  grid-area: 15 / 32 / 16 / 37;
+}

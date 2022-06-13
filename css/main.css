@@ -1,0 +1,139 @@
+:root {
+  --grey-darkest: #3b3b3b;
+  --grey-darker: #9e9e9e;
+  --grey-dark: #9e9e9e;
+  --grey: #c2c2c2;
+  --grey-light: #f2f2f2;
+  --gap: 2rem;
+  --ibm-blue: #466bb0;
+  --white: #fff;
+
+  --key-width: 4rem;
+  --key-height: 4rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: Helvetica, serif;
+  font-size: 0.8rem;
+  padding-top: 8rem;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  display: block;
+}
+
+.keyboard {
+  background-color: var(--grey-light);
+  border: 1px solid var(--grey-dark);
+  border-radius: 0.5rem;
+  padding: 3rem 0;
+  margin: 0 auto;
+  width: calc(var(--key-width) * 25);
+}
+
+.keyboard__item {
+  border: 1px solid var(--grey-dark);
+  padding: 0.5rem 1rem;
+  margin: 0 auto;
+  width: calc(var(--key-width) * 23);
+}
+
+.keyboard__top-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  background-color: var(--grey);
+  border: 1px solid var(--grey-dark);
+  border-radius: 4rem;
+  color: var(--ibm-blue);
+  font-size: 3rem;
+  margin: 0 0 3rem 4rem;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  width: 6rem;
+}
+
+.logo__text {
+  transform: rotate(-15deg);
+}
+
+.keyboard__base {
+  column-gap: var(--gap);
+  display: grid;
+  grid-template-columns:
+    calc(var(--key-width) * 15) calc(var(--key-width) * 3)
+    calc(var(--key-width) * 4);
+  grid-column-gap: var(--gap);
+}
+
+.keyboard__directions {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.key {
+  background-color: var(--grey);
+  border-radius: 0.3rem;
+  box-shadow: inset 0 0 0 1px black;
+  display: flex;
+  height: var(--key-height);
+  width: var(--key-width);
+}
+
+.key .key__item {
+  background-color: var(--grey-light);
+  border-radius: 0.3rem;
+  margin: 0.5rem 0.5em 0.7rem;
+  padding: 0.3rem;
+  width: 100%;
+}
+
+.key--double {
+  width: calc(var(--key-width) * 2);
+}
+
+.key--double-plus-half {
+  width: calc(var(--key-width) + calc(var(--key-width) / 2));
+}
+
+.key--dark {
+  background-color: var(--grey-dark);
+}
+
+.key--dark .key__item {
+  background-color: var(--grey);
+}
+
+.backdrop {
+  background-color: black;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px black;
+}
+
+.d-f {
+  display: flex;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.p-03 {
+  padding: 0.3rem;
+}
