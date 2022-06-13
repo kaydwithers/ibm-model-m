@@ -1,4 +1,4 @@
-const audio = new Audio("click.mp3");
+const audio = new Audio("/assets/click.mp3");
 
 const playAudio = () => {
   audio.play();
