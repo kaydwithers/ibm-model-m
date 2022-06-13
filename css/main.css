@@ -32,6 +32,9 @@ p {
 }
 
 button {
+  background-color: transparent;
+  background-image: none;
+  cursor: pointer;
   display: block;
 }
 
