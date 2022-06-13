@@ -1,15 +1,10 @@
 .escape {
   display: grid;
-  column-gap: 1rem;
-  grid-template-columns: repeat(1, calc(var(--key-width))) calc(
-      var(--key-width) * 1
-    );
   grid-template-rows: var(--key-height);
 }
 
 .escape__item {
   display: grid;
-  grid-template-columns: repeat(1, var(--key-width));
 }
 
 .esc:after {
