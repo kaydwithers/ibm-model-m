@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="IBM Model M Keyboard created in CSS." />
+    <title>CSS IBM Model M Keyboard.</title>
+  </head>
+  <body>
+    <style>
+      :root {
+        --grey-darkest: #3b3b3b;
+        --grey-darker: #9e9e9e;
+        --grey-dark: #9e9e9e;
+        --grey: #c2c2c2;
+        --grey-light: #f2f2f2;
+        --gap: 2rem;
+        --ibm-blue: #466bb0;
+        --white: #fff;
+
+        --key-width: 4rem;
+        --key-height: 4rem;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 10px;
+      }
+
+      body {
+        font-family: Helvetica, serif;
+        font-size: 0.8rem;
+        padding-top: 8rem;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .keyboard {
+        background-color: var(--grey-light);
+        border: 1px solid var(--grey-dark);
+        border-radius: 0.5rem;
+        padding: 3rem 0;
+        margin: 0 auto;
+        width: calc(var(--key-width) * 25);
+      }
+
+      .keyboard__item {
+        border: 1px solid var(--grey-dark);
+        padding: 0.5rem 1rem;
+        margin: 0 auto;
+        width: calc(var(--key-width) * 23);
+      }
+
+      .keyboard__top-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+      }
+
+      .logo {
+        background-color: var(--grey);
+        border: 1px solid var(--grey-dark);
+        border-radius: 4rem;
+        color: var(--ibm-blue);
+        font-size: 3rem;
+        margin: 0 0 3rem 4rem;
+        padding: 0.5rem 1rem;
+        text-align: center;
+        width: 6rem;
+      }
+
+      .logo__text {
+        transform: rotate(-15deg);
+      }
+
+      .keyboard__base {
+        column-gap: var(--gap);
+        display: grid;
+        grid-template-columns:
+          calc(var(--key-width) * 15) calc(var(--key-width) * 3)
+          calc(var(--key-width) * 4);
+        grid-column-gap: var(--gap);
+      }
+
+      .keyboard__directions {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+      }
+
+      .key {
+        background-color: var(--grey);
+        border-radius: 0.3rem;
+        box-shadow: inset 0 0 0 1px black;
+        display: flex;
+        height: var(--key-height);
+        width: var(--key-width);
+      }
+
+      .key .key__item {
+        background-color: var(--grey-light);
+        border-radius: 0.3rem;
+        margin: 0.5rem 0.5em 0.7rem;
+        padding: 0.3rem;
+        width: 100%;
+      }
+
+      .key--double {
+        width: calc(var(--key-width) * 2);
+      }
+
+      .key--double-plus-half {
+        width: calc(var(--key-width) + calc(var(--key-width) / 2));
+      }
+
+      .key--dark {
+        background-color: var(--grey-dark);
+      }
+
+      .key--dark .key__item {
+        background-color: var(--grey);
+      }
+
+      .backdrop {
+        background-color: black;
+        border-radius: 3px;
+        box-shadow: 0 0 0 1px black;
+      }
+
+      .d-f {
+        display: flex;
+      }
+
+      .mb-1 {
+        margin-bottom: 1rem;
+      }
+
+      .p-03 {
+        padding: 0.3rem;
+      }
+
+      .ibm-logo {
+        display: flex;
+        position: relative;
+        margin-bottom: 10rem;
+        z-index: 666;
+      }
+
+      .ibm-logo__content {
+        bottom: 0;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        width: 100%;
+      }
+
+      .ibm-logo__content__inner {
+        display: grid;
+        grid-template-columns: repeat(36, 1fr);
+        grid-template-rows: repeat(15, 1fr);
+        height: 100%;
+      }
+
+      .ibm-logo__content__inner div {
+        background-color: var(--ibm-blue);
+      }
+
+      /* I */
+      .ia {
+        grid-area: 1 / 1 / 2 / 8;
+      }
+      .ib {
+        grid-area: 3 / 1 / 4 / 8;
+      }
+
+      .ic {
+        grid-area: 5 / 3 / 6 / 6;
+      }
+      .id {
+        grid-area: 7 / 3 / 8 / 6;
+      }
+      .ie {
+        grid-area: 9 / 3 / 10 / 6;
+      }
+      .if {
+        grid-area: 11 / 3 / 12 / 6;
+      }
+
+      .ig {
+        grid-area: 13 / 1 / 14 / 8;
+      }
+      .ih {
+        grid-area: 15 / 1 / 16 / 8;
+      }
+
+      /* B */
+      .ba {
+        grid-area: 1 / 9 / 2 / 19;
+        border-radius: 0% 30% 0% 0% / 0% 100% 0% 0%;
+      }
+      .bb {
+        grid-area: 3 / 9 / 4 / 20;
+      }
+
+      .bc-a {
+        grid-area: 5 / 11 / 6 / 14;
+      }
+      .bc-b {
+        grid-area: 5 / 17 / 6 / 20;
+      }
+
+      .bd {
+        grid-area: 7 / 11 / 8 / 20;
+      }
+      .be {
+        grid-area: 9 / 11 / 10 / 20;
+      }
+
+      .bf-a {
+        grid-area: 11 / 11 / 12 / 14;
+      }
+      .bf-b {
+        grid-area: 11 / 17 / 12 / 20;
+      }
+
+      .bg {
+        grid-area: 13 / 9 / 14 / 20;
+      }
+      .bh {
+        grid-area: 15 / 9 / 16 / 19;
+      }
+
+      /* M */
+      .ma-a {
+        grid-area: 1 / 21 / 2 / 27;
+        clip-path: polygon(0% 0, 94% 0%, 100% 100%, 0% 100%);
+      }
+      .ma-b {
+        grid-area: 1 / 31 / 2 / 37;
+        clip-path: polygon(6% 0, 100% 0%, 100% 100%, 0% 100%);
+      }
+
+      .mb-a {
+        grid-area: 3 / 21 / 4 / 28;
+        clip-path: polygon(0% 0%, 90% 0%, 96% 100%, 0% 100%);
+      }
+      .mb-b {
+        grid-area: 3 / 30 / 4 / 37;
+        clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 4% 100%);
+      }
+
+      .mc-a {
+        grid-area: 5 / 23 / 6 / 29;
+        clip-path: polygon(0% 0, 84% 0%, 90% 100%, 0% 100%);
+      }
+      .mc-b {
+        grid-area: 5 / 29 / 6 / 35;
+        clip-path: polygon(16% 0%, 100% 0%, 100% 100%, 10% 100%);
+      }
+
+      .md-a {
+        grid-area: 7 / 23 / 8 / 26;
+      }
+      .md-b {
+        grid-area: 7 / 26 / 8 / 29;
+        clip-path: polygon(0% 0, 90% 0%, 100% 100%, 10% 100%);
+      }
+      .md-c {
+        grid-area: 7 / 29 / 8 / 32;
+        clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+      }
+      .md-d {
+        grid-area: 7 / 32 / 8 / 35;
+      }
+
+      .me {
+        grid-area: 9 / 23 / 10 / 35;
+      }
+
+      .me-a {
+        grid-area: 9 / 23 / 10 / 26;
+      }
+      .me-b {
+        grid-area: 9 / 26 / 10 / 32;
+        clip-path: polygon(10% 0, 90% 0%, 84% 100%, 16% 100%);
+      }
+      .me-c {
+        grid-area: 9 / 32 / 10 / 35;
+      }
+
+      .mf-a {
+        grid-area: 11 / 23 / 12 / 26;
+      }
+      .mf-b {
+        grid-area: 11 / 27 / 12 / 31;
+        clip-path: polygon(7% 0%, 93% 0%, 85% 100%, 15% 100%);
+      }
+      .mf-c {
+        grid-area: 11 / 32 / 12 / 35;
+      }
+
+      .mg-a {
+        grid-area: 13 / 21 / 14 / 26;
+      }
+      .mg-b {
+        grid-area: 13 / 28 / 14 / 30;
+        clip-path: polygon(0% 0, 100% 0%, 85% 100%, 15% 100%);
+      }
+      .mg-c {
+        grid-area: 13 / 32 / 14 / 37;
+      }
+
+      .mh-a {
+        grid-area: 15 / 21 / 16 / 26;
+      }
+      .mh-b {
+        grid-area: 15 / 28 / 16 / 30;
+        clip-path: polygon(30% 0, 70% 0%, 50% 100%, 50% 100%);
+      }
+      .mh-c {
+        grid-area: 15 / 32 / 16 / 37;
+      }
+
+      .ibm-logo__image {
+        width: 100%;
+      }
+
+      .ibm-logo__image img {
+        opacity: 0.3;
+        width: 100%;
+      }
+    </style>
+
+    <link rel="stylesheet" href="/css/keys.css" />
+    <link rel="stylesheet" href="/css/navigation.css" />
+    <link rel="stylesheet" href="/css/functions.css" />
+    <link rel="stylesheet" href="/css/locks.css" />
+    <link rel="stylesheet" href="/css/characters.css" />
+
+    <div class="ibm-logo">
+      <div class="ibm-logo__content">
+        <div class="ibm-logo__content__inner">
+          <!-- I -->
+          <div class="ia"></div>
+          <div class="ib"></div>
+          <div class="ic"></div>
+          <div class="id"></div>
+          <div class="ie"></div>
+          <div class="if"></div>
+          <div class="ig"></div>
+          <div class="ih"></div>
+
+          <!-- B -->
+          <div class="ba"></div>
+          <div class="bb"></div>
+          <div class="bc-a"></div>
+          <div class="bc-b"></div>
+          <div class="bd"></div>
+          <div class="be"></div>
+          <div class="bf-a"></div>
+          <div class="bf-b"></div>
+          <div class="bg"></div>
+          <div class="bh"></div>
+
+          <!-- M -->
+          <div class="ma-a"></div>
+          <div class="ma-b"></div>
+          <div class="mb-a"></div>
+          <div class="mb-b"></div>
+          <div class="mc-a"></div>
+          <div class="mc-b"></div>
+          <div class="md-a"></div>
+          <div class="md-b"></div>
+          <div class="md-c"></div>
+          <div class="md-d"></div>
+          <div class="me-a"></div>
+          <div class="me-b"></div>
+          <div class="me-c"></div>
+          <div class="mf-a"></div>
+          <div class="mf-b"></div>
+          <div class="mf-c"></div>
+          <div class="mg-a"></div>
+          <div class="mg-b"></div>
+          <div class="mg-c"></div>
+          <div class="mh-a"></div>
+          <div class="mh-b"></div>
+          <div class="mh-c"></div>
+        </div>
+      </div>
+      <div class="ibm-logo__image">
+        <img src="/assets/ibm.jpg" />
+      </div>
+    </div>
+
+    <div class="keyboard">
+      <div class="logo">
+        <div class="logo__text">IBM</div>
+      </div>
+
+      <div class="keyboard__item">
+        <div class="keyboard__top-row">
+          <div class="keyboard__escape">
+            <div class="key key--dark">
+              <div class="key__item">Esc</div>
+            </div>
+          </div>
+
+          <div class="functions">
+            <div class="functions__item backdrop">
+              <div class="key">
+                <div class="key__item">F1</div>
+              </div>
+              <div class="key">
+                <div class="key__item">F2</div>
+              </div>
+              <div class="key">
+                <div class="key__item">F3</div>
+              </div>
+              <div class="key">
+                <div class="key__item">F4</div>
+              </div>
+            </div>
+
+            <div class="functions__item backdrop">
+              <div class="key key--dark">
+                <div class="key__item">F5</div>
+              </div>
+              <div class="key key--dark">
+                <div class="key__item">F6</div>
+              </div>
+              <div class="key key--dark">
+                <div class="key__item">F7</div>
+              </div>
+              <div class="key key--dark">
+                <div class="key__item">F8</div>
+              </div>
+            </div>
+
+            <div class="functions__item backdrop">
+              <div class="key">
+                <div class="key__item">F9</div>
+              </div>
+              <div class="key">
+                <div class="key__item">F10</div>
+              </div>
+              <div class="key">
+                <div class="key__item">F11</div>
+              </div>
+              <div class="key">
+                <div class="key__item">F12</div>
+              </div>
+            </div>
+
+            <div class="functions__item backdrop">
+              <div class="key key--dark">
+                <div class="key__item">Print Screen</div>
+              </div>
+              <div class="key key--dark">
+                <div class="key__item">Scroll Lock</div>
+              </div>
+              <div class="key key--dark">
+                <div class="key__item">Pause</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="locks">
+            <div class="locks__item">
+              <div class="locks__content">
+                <p>Num Lock</p>
+                <div class="light"></div>
+              </div>
+            </div>
+            <div class="locks__item">
+              <div class="locks__content">
+                <p>Caps Lock</p>
+                <div class="light"></div>
+              </div>
+            </div>
+            <div class="locks__item">
+              <div class="locks__content">
+                <p>Scroll Lock</p>
+                <div class="light"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="keyboard__base">
+          <div class="characters">
+            <div class="row row--a">
+              <div class="key">
+                <div class="key__item">~</div>
+              </div>
+              <div class="key">
+                <div class="key__item">1</div>
+              </div>
+              <div class="key">
+                <div class="key__item">2</div>
+              </div>
+              <div class="key">
+                <div class="key__item">3</div>
+              </div>
+              <div class="key">
+                <div class="key__item">4</div>
+              </div>
+              <div class="key">
+                <div class="key__item">5</div>
+              </div>
+              <div class="key">
+                <div class="key__item">6</div>
+              </div>
+              <div class="key">
+                <div class="key__item">7</div>
+              </div>
+              <div class="key">
+                <div class="key__item">8</div>
+              </div>
+              <div class="key">
+                <div class="key__item">9</div>
+              </div>
+              <div class="key">
+                <div class="key__item">0</div>
+              </div>
+              <div class="key">
+                <div class="key__item">-</div>
+              </div>
+              <div class="key">
+                <div class="key__item">+</div>
+              </div>
+              <div class="key key--dark key--double">
+                <div class="key__item">Backspace</div>
+              </div>
+            </div>
+
+            <div class="row row--b">
+              <div class="key key--dark key--double-plus-half">
+                <div class="key__item">Tab</div>
+              </div>
+              <div class="key">
+                <div class="key__item">Q</div>
+              </div>
+              <div class="key">
+                <div class="key__item">W</div>
+              </div>
+              <div class="key">
+                <div class="key__item">E</div>
+              </div>
+              <div class="key">
+                <div class="key__item">R</div>
+              </div>
+              <div class="key">
+                <div class="key__item">R</div>
+              </div>
+              <div class="key">
+                <div class="key__item">Y</div>
+              </div>
+              <div class="key">
+                <div class="key__item">U</div>
+              </div>
+              <div class="key">
+                <div class="key__item">I</div>
+              </div>
+              <div class="key">
+                <div class="key__item">O</div>
+              </div>
+              <div class="key">
+                <div class="key__item">P</div>
+              </div>
+              <div class="key">
+                <div class="key__item">{</div>
+              </div>
+              <div class="key">
+                <div class="key__item">}</div>
+              </div>
+              <div class="key key--double-plus-half">
+                <div class="key__item">|</div>
+              </div>
+            </div>
+
+            <div class="row row--c">
+              <div class="key key--dark">
+                <div class="key__item">Caps Lock</div>
+              </div>
+              <div class="key">
+                <div class="key__item">A</div>
+              </div>
+              <div class="key">
+                <div class="key__item">S</div>
+              </div>
+              <div class="key">
+                <div class="key__item">D</div>
+              </div>
+              <div class="key">
+                <div class="key__item">F</div>
+              </div>
+              <div class="key">
+                <div class="key__item">G</div>
+              </div>
+              <div class="key">
+                <div class="key__item">H</div>
+              </div>
+              <div class="key">
+                <div class="key__item">J</div>
+              </div>
+              <div class="key">
+                <div class="key__item">K</div>
+              </div>
+              <div class="key">
+                <div class="key__item">L</div>
+              </div>
+              <div class="key">
+                <div class="key__item">:</div>
+              </div>
+              <div class="key">
+                <div class="key__item">"</div>
+              </div>
+              <div class="key key--double key--dark">
+                <div class="key__item">Enter</div>
+              </div>
+            </div>
+
+            <div class="row row--d">
+              <div class="key key--double key--dark">
+                <div class="key__item">Shift</div>
+              </div>
+              <div class="key">
+                <div class="key__item">Z</div>
+              </div>
+              <div class="key">
+                <div class="key__item">X</div>
+              </div>
+              <div class="key">
+                <div class="key__item">C</div>
+              </div>
+              <div class="key">
+                <div class="key__item">V</div>
+              </div>
+              <div class="key">
+                <div class="key__item">B</div>
+              </div>
+              <div class="key">
+                <div class="key__item">N</div>
+              </div>
+              <div class="key">
+                <div class="key__item">M</div>
+              </div>
+              <div class="key">
+                <div class="key__item">CL</div>
+              </div>
+              <div class="key">
+                <div class="key__item">CR</div>
+              </div>
+              <div class="key">
+                <div class="key__item">?</div>
+              </div>
+              <div class="key key--double key--dark">
+                <div class="key__item">Shift</div>
+              </div>
+            </div>
+
+            <div class="row row--e">
+              <div class="key key--dark key--double-plus-half">
+                <div class="key__item">Ctrl</div>
+              </div>
+              <div class="key key--dark key--double-plus-half">
+                <div class="key__item">Alt</div>
+              </div>
+              <div class="key spacebar">
+                <div class="key__item"></div>
+              </div>
+              <div class="key key--dark key--double-plus-half">
+                <div class="key__item">Alt</div>
+              </div>
+              <div class="key key--dark key--double-plus-half">
+                <div class="key__item">Ctrl</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="navigation">
+            <div class="navigation__top backdrop">
+              <div class="key key--dark">
+                <div class="key__item">Insert</div>
+              </div>
+              <div class="key key--dark">
+                <div class="key__item">Home</div>
+              </div>
+              <div class="key key--dark">
+                <div class="key__item">Page Up</div>
+              </div>
+              <div class="key key--dark">
+                <div class="key__item">Delete</div>
+              </div>
+              <div class="key key--dark">
+                <div class="key__item">End</div>
+              </div>
+              <div class="key key--dark">
+                <div class="key__item">Page Down</div>
+              </div>
+            </div>
+
+            <div class="navigation__bottom">
+              <div class="key key--dark arrow-up">
+                <div class="key__item">^</div>
+              </div>
+              <div class="key key--dark arrow-left">
+                <div class="key__item">CL</div>
+              </div>
+              <div class="key key--dark arrow-down">
+                <div class="key__item">v</div>
+              </div>
+              <div class="key key--dark arrow-right">
+                <div class="key__item">AR</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="numpad backdrop">
+            <link rel="stylesheet" href="/css/numpad.css" />
+            <div class="key key--dark">
+              <div class="key__item">Num Lock</div>
+            </div>
+            <div class="key key--dark">
+              <div class="key__item">/</div>
+            </div>
+            <div class="key key--dark">
+              <div class="key__item">*</div>
+            </div>
+            <div class="key key--dark">
+              <div class="key__item">-</div>
+            </div>
+            <div class="key">
+              <div class="key__item">7</div>
+            </div>
+            <div class="key">
+              <div class="key__item">8</div>
+            </div>
+            <div class="key">
+              <div class="key__item">9</div>
+            </div>
+            <div class="key key--dark plus">
+              <div class="key__item">+</div>
+            </div>
+            <div class="key">
+              <div class="key__item">4</div>
+            </div>
+            <div class="key">
+              <div class="key__item">5</div>
+            </div>
+            <div class="key">
+              <div class="key__item">6</div>
+            </div>
+            <div class="key">
+              <div class="key__item">1</div>
+            </div>
+            <div class="key">
+              <div class="key__item">2</div>
+            </div>
+            <div class="key">
+              <div class="key__item">3</div>
+            </div>
+            <div class="key key--dark enter">
+              <div class="key__item">Enter</div>
+            </div>
+            <div class="key key--double zero">
+              <div class="key__item">0</div>
+            </div>
+            <div class="key">
+              <div class="key__item">.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
