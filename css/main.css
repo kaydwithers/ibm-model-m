@@ -34,8 +34,11 @@ p {
 button {
   background-color: transparent;
   background-image: none;
+  color: inherit;
   cursor: pointer;
   display: block;
+  line-height: inherit;
+  padding: 0;
 }
 
 .keyboard {
